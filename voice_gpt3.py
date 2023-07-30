@@ -39,8 +39,8 @@ def speak_text(text):
 
 def main():
     while True:
-        # wait for user to say "Begin"
-        print("Say 'Genius' to start recording your question...")
+        # Wait for the user to say "Start"
+        print("Say 'Start' to start recording your question...")
         with sr.Microphone() as source:
             recognizer = sr.Recognizer()
             audio = recognizer.listen(source)
@@ -68,7 +68,7 @@ def main():
                         response = generate_response(text)
                         print(f"GPT-3 says: {response}")
 
-                        # read response using text-to-speech
+                        # Read response using text-to-speech
                         speak_text(response)
             except Exception as e:
                 print("An error occurred : {}".format(e))
